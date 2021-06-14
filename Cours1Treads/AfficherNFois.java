@@ -8,8 +8,12 @@ public class AfficherNFois extends Thread {
     }
 
     public void run() {
-        for (int i=0; i<nb; i++){
-            System.out.println(meesage);
+        try{
+            for (int i=0; i<nb; i++){
+                System.out.println(meesage);
+                sleep(1000);
+            }
         }
+        catch (Exception e){}
     }
 }
