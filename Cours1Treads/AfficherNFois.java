@@ -11,7 +11,7 @@ public class AfficherNFois extends Thread {
         try{
             for (int i=0; i<nb; i++){
                 System.out.println(meesage);
-                sleep(1000);
+                //sleep(1000);
             }
         }
         catch (Exception e){}

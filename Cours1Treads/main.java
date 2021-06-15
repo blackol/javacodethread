@@ -1,9 +1,11 @@
+import java.util.Scanner;
+
 public class main {
     public static void main(String[] args){
-        AfficherNFois a1=new AfficherNFois(10, "Bonjour");
-        AfficherNFois a2=new AfficherNFois(10, "TOTO");
+        AfficherNFois a1=new AfficherNFois(26, "Bonjour");
+        AfficherAlphabet b2 = new AfficherAlphabet();
         a1.start();
-        a2.start();
+        b2.start();
     }
     
 }
