@@ -4,25 +4,26 @@ public class main {
     public static void main(String[] args){
         int debut;
         String message;
-        int z ;
         int fin ;
-        int y = 1;
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Veuillez saisir Le nombre de threads :");
-        int maxThreads = sc.nextInt();
-
-        message = "Veuillezibiibiubiububiuivuiyiviyvyvyviviuvuejiibiububububub";
         
+        
+
+    
+        System.out.print("Veuillez saisir Le nombre de threads :");
+        int maxThreads = new Scanner(System.in).nextInt() ;
+        System.out.print("Quels caretère voulez vous :");
+        char c = new Scanner(System.in).nextLine().charAt(0);
+        System.out.print("Quels caretère voulez vous :");
+         message = "Veuillez";
+
 // Optimiser avec une tab de achage
+        Long begin = System.currentTimeMillis();
 
         AfficherNFois tab [] = new AfficherNFois[maxThreads];
 			for(int i=0; i<maxThreads; i++){
-                
-                fin = message.length()/z;
-                debut = message.length()/y;
-
-				tab[i]= new AfficherNFois(debut, message,fin);
+                fin = (i+1)*message.length()/maxThreads;
+                debut = i*message.length()/maxThreads;
+				tab[i]= new AfficherNFois(debut, message,fin,c);
 			}
 			for(int i=0; i<maxThreads; i++){
 				tab[i].start();
@@ -31,7 +32,12 @@ public class main {
                 } catch (InterruptedException e) {
                 }
 			}
-
+            long end = System.currentTimeMillis();
+            float time = ((float) (end-begin))/100;
+            System.out.println(time + "seconds");
+            System.out.print("Ce caractère est présent :");
+            System.out.print(AfficherNFois.nbocu);
+            System.out.println(" fois");
         /*
         AfficherNFois a1=new AfficherNFois(26, "Bonjour");
         AfficherAlphabet b2 = new AfficherAlphabet();
@@ -40,4 +46,3 @@ public class main {
     }
     
 }
-

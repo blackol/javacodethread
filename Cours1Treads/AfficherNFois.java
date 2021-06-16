@@ -1,10 +1,12 @@
 public class AfficherNFois extends Thread {
+    public static int nbocu = 0 ;
     private int nb;
     private String meesage;
     private int interation;
     private int w ;
+    private char c;
 
-    public AfficherNFois (int commencement, String m, int fin){
+    public AfficherNFois (int commencement, String m, int fin, char c ){
         nb = fin;
         meesage=m;
         interation = 0;
@@ -14,12 +16,11 @@ public class AfficherNFois extends Thread {
     public void run() {
         try{
             for (int i= w; i<nb; i++){
-                if(meesage.charAt(i)=='e'){
-                    interation++;
+                if(meesage.charAt(i)== c ){
+                    nbocu++;
                 }
                 //sleep(1000);
             }
-            //System.out.println(interation);
 
         }
         catch (Exception e){}
