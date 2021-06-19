@@ -1,31 +1,35 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class main {
     public static void main(String[] args){
-        int debut;
-        String message;
-        int fin ;
-        
-        
 
-    
+   
+
+        System.out.println("Entrez un nombre");
+        int n = new Scanner(System.in).nextInt();
         System.out.print("Veuillez saisir Le nombre de threads :");
         int maxThreads = new Scanner(System.in).nextInt() ;
-        System.out.print("Quels caretère voulez vous :");
-        char c = new Scanner(System.in).nextLine().charAt(0);
-        System.out.print("Quels caretère voulez vous :");
-         message = "Veuillez";
+        // initialisation valeurs debut et fin
+        int fin ;
+        int debut;
+        // taille du tableau
+        int taille;
+        taille = n;
 
-// Optimiser avec une tab de achage
-        Long begin = System.currentTimeMillis();
 
-        AfficherNFois tab [] = new AfficherNFois[maxThreads];
-			for(int i=0; i<maxThreads; i++){
-                fin = (i+1)*message.length()/maxThreads;
-                debut = i*message.length()/maxThreads;
-				tab[i]= new AfficherNFois(debut, message,fin,c);
-			}
-			for(int i=0; i<maxThreads; i++){
+
+       
+        NombrePremiers tab[] = new NombrePremiers[maxThreads];
+        
+            for(int i=0; i<maxThreads; i++){
+                debut = i*taille/maxThreads;
+                fin = (i+1)*taille/maxThreads;
+                tab[i]= new NombrePremiers(debut,fin);
+            }
+            Long begin = System.currentTimeMillis();
+            for(int i=0; i<maxThreads; i++){
+                tab[i].setPriority(10);  
 				tab[i].start();
                 try {
                     tab[i].join();
@@ -35,14 +39,14 @@ public class main {
             long end = System.currentTimeMillis();
             float time = ((float) (end-begin))/100;
             System.out.println(time + "seconds");
-            System.out.print("Ce caractère est présent :");
-            System.out.print(AfficherNFois.nbocu);
-            System.out.println(" fois");
-        /*
-        AfficherNFois a1=new AfficherNFois(26, "Bonjour");
-        AfficherAlphabet b2 = new AfficherAlphabet();
-        a1.start();
-        b2.start(); */
+            
+/*
+            for(Integer i : NombrePremiers.liste){
+                System.out.println(i);
+            }
+            System.out.println(time + "seconds");
+
+*/
     }
     
 }
