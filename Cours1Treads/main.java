@@ -4,8 +4,34 @@ import java.util.ArrayList;
 public class main {
     public static void main(String[] args){
 
-   
+        
+        int fe = new Scanner(System.in).nextInt();
+        int fo = new Scanner(System.in).nextInt();
 
+        HorlogeTread a1 = new HorlogeTread(fe, fo);
+        a1.start();
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+/*
         System.out.println("Entrez un nombre");
         int n = new Scanner(System.in).nextInt();
         System.out.print("Veuillez saisir Le nombre de threads :");
@@ -47,6 +73,10 @@ public class main {
             System.out.println(time + "seconds");
 
 */
+    }
+
+    private static Object HorlogeTread(int fe, int fo) {
+        return null;
     }
     
 }
