@@ -12,6 +12,10 @@ public class main {
         a1.start();
         
 
+        ControleHorlogeThread cHorloge1 = new ControleHorlogeThread(a1);
+		cHorloge1.start();
+        
+
         
 
 
